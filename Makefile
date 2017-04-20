@@ -1,5 +1,7 @@
 DIRS = xrtest
 
+# extres Makefile
+
 extres:
 	go vet
 	golint
