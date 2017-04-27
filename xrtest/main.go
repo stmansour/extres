@@ -18,4 +18,5 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Printf("Dbuser = %s\n", App.X.Dbuser)
+	fmt.Printf("MojoWebAddr = %s\n", App.X.MojoWebAddr)
 }
