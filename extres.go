@@ -43,6 +43,7 @@ type ExternalResources struct {
 	MojoDbport  int    `json:"MojoDbport"`
 	MojoDbtype  string `json:"MojoDbtype"`
 	MojoWebAddr string `json:"MojoWebAddr"`
+	Timezone    string `json:"Timezone"`
 }
 
 // ReadConfig will read the configuration file "config.json" if
@@ -50,6 +51,7 @@ type ExternalResources struct {
 //=======================================================================================
 func ReadConfig(fname string, a *ExternalResources) error {
 	var err error
+	a.Timezone = "utc" // default, overridden by value in config.json
 	if _, err = os.Stat(fname); err != nil {
 		return err
 	}

@@ -19,4 +19,5 @@ func main() {
 	}
 	fmt.Printf("Dbuser = %s\n", App.X.Dbuser)
 	fmt.Printf("MojoWebAddr = %s\n", App.X.MojoWebAddr)
+	fmt.Printf("Timezone = %s\n", App.X.Timezone)
 }
