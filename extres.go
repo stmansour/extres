@@ -51,7 +51,7 @@ type ExternalResources struct {
 //=======================================================================================
 func ReadConfig(fname string, a *ExternalResources) error {
 	var err error
-	a.Timezone = "utc" // default, overridden by value in config.json
+	a.Timezone = "GMT" // default, overridden by value in config.json
 	if _, err = os.Stat(fname); err != nil {
 		return err
 	}
