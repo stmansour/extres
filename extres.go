@@ -17,7 +17,7 @@ const (
 )
 
 // ExternalResources is a type defining several resources
-// that are used accross the Accord suite.
+// that are used across the Accord suite.
 type ExternalResources struct {
 	Env         int    `json:"Env"`
 	Dbuser      string `json:"Dbuser"`
