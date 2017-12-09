@@ -20,6 +20,9 @@ const (
 // that are used across the Accord suite.
 type ExternalResources struct {
 	Env         int    `json:"Env"`
+	AuthNHost   string `json:"AuthNHost"`
+	AuthNType   string `json:"AuthNType"`
+	AuthNPort   int    `json:"AuthNPort"`
 	Dbuser      string `json:"Dbuser"`
 	Dbname      string `json:"Dbname"`
 	Dbpass      string `json:"Dbpass"`
