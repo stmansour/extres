@@ -19,34 +19,35 @@ const (
 // ExternalResources is a type defining several resources
 // that are used across the Accord suite.
 type ExternalResources struct {
-	Env         int    `json:"Env"`
-	AuthNHost   string `json:"AuthNHost"`
-	AuthNType   string `json:"AuthNType"`
-	AuthNPort   int    `json:"AuthNPort"`
-	Dbuser      string `json:"Dbuser"`
-	Dbname      string `json:"Dbname"`
-	Dbpass      string `json:"Dbpass"`
-	Dbhost      string `json:"Dbhost"`
-	Dbport      int    `json:"Dbport"`
-	Dbtype      string `json:"Dbtype"`
-	SMTPHost    string `json:"SmtpHost"`
-	SMTPPort    int    `json:"SmtpPort"`
-	SMTPLogin   string `json:"SmtpLogin"`
-	SMTPPass    string `json:"SmtpPass"`
-	RRDbuser    string `json:"RRDbuser"`
-	RRDbname    string `json:"RRDbname"`
-	RRDbpass    string `json:"RRDbpass"`
-	RRDbhost    string `json:"RRDbhost"`
-	RRDbport    int    `json:"RRDbport"`
-	RRDbtype    string `json:"RRDbtype"`
-	MojoDbuser  string `json:"MojoDbuser"`
-	MojoDbname  string `json:"MojoDbname"`
-	MojoDbpass  string `json:"MojoDbpass"`
-	MojoDbhost  string `json:"MojoDbhost"`
-	MojoDbport  int    `json:"MojoDbport"`
-	MojoDbtype  string `json:"MojoDbtype"`
-	MojoWebAddr string `json:"MojoWebAddr"`
-	Timezone    string `json:"Timezone"`
+	Env            int    `json:"Env"`
+	AuthNHost      string `json:"AuthNHost"`
+	AuthNType      string `json:"AuthNType"`
+	AuthNPort      int    `json:"AuthNPort"`
+	Dbuser         string `json:"Dbuser"`
+	Dbname         string `json:"Dbname"`
+	Dbpass         string `json:"Dbpass"`
+	Dbhost         string `json:"Dbhost"`
+	Dbport         int    `json:"Dbport"`
+	Dbtype         string `json:"Dbtype"`
+	SMTPHost       string `json:"SmtpHost"`
+	SMTPPort       int    `json:"SmtpPort"`
+	SMTPLogin      string `json:"SmtpLogin"`
+	SMTPPass       string `json:"SmtpPass"`
+	RRDbuser       string `json:"RRDbuser"`
+	RRDbname       string `json:"RRDbname"`
+	RRDbpass       string `json:"RRDbpass"`
+	RRDbhost       string `json:"RRDbhost"`
+	RRDbport       int    `json:"RRDbport"`
+	RRDbtype       string `json:"RRDbtype"`
+	MojoDbuser     string `json:"MojoDbuser"`
+	MojoDbname     string `json:"MojoDbname"`
+	MojoDbpass     string `json:"MojoDbpass"`
+	MojoDbhost     string `json:"MojoDbhost"`
+	MojoDbport     int    `json:"MojoDbport"`
+	MojoDbtype     string `json:"MojoDbtype"`
+	MojoWebAddr    string `json:"MojoWebAddr"`
+	Timezone       string `json:"Timezone"`
+	SessionTimeout int    `json:"SessionTimeout"` // session timeout in minutes
 }
 
 // ReadConfig will read the configuration file "config.json" if
