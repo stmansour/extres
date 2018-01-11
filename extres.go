@@ -100,6 +100,17 @@ func GetSQLOpenString(dbname string, a *ExternalResources) string {
 			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
 			os.Exit(1)
 		}
+	case "receipts":
+		switch a.Env {
+		case APPENVDEV: //dev
+			s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.RRDbuser, dbname)
+		case APPENVPROD: //production
+			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
+				a.RRDbuser, a.RRDbpass, a.RRDbhost, a.RRDbport, dbname)
+		default:
+			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
+			os.Exit(1)
+		}
 	case "mojo":
 		switch a.Env {
 		case APPENVDEV: //dev
