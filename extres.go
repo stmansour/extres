@@ -49,6 +49,10 @@ type ExternalResources struct {
 	Timezone       string `json:"Timezone"`
 	SessionTimeout int    `json:"SessionTimeout"` // session timeout in minutes
 	RootHandler    string `json:"RootHandler"`    // Handler for web app where url filepath is "/"
+	Tester1Name    string `json:"Tester1Name"`    // username for tester 1
+	Tester1Pass    string `json:"Tester1Pass"`    // password for tester 1
+	Tester2Name    string `json:"Tester2Name"`    // username for tester 2
+	Tester2Pass    string `json:"Tester2Pass"`    // password for tester 2
 }
 
 // ReadConfig will read the configuration file "config.json" if
