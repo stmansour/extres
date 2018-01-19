@@ -1,5 +1,7 @@
 package extres
 
+// External Resource keeper
+
 import (
 	"encoding/json"
 	"fmt"
