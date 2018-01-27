@@ -53,6 +53,9 @@ type ExternalResources struct {
 	Tester1Pass    string `json:"Tester1Pass"`    // password for tester 1
 	Tester2Name    string `json:"Tester2Name"`    // username for tester 2
 	Tester2Pass    string `json:"Tester2Pass"`    // password for tester 2
+	RepoUser       string `json:"RepoUser"`       // for Artifactory
+	RepoPass       string `json:"RepoPass"`       // for Artifactory
+	RepoURL        string `json:"RepoURL"`        // for Artifactory
 }
 
 // ReadConfig will read the configuration file "config.json" if
