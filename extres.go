@@ -55,6 +55,10 @@ type ExternalResources struct {
 	Tester1Pass    string `json:"Tester1Pass"`    // password for tester 1
 	Tester2Name    string `json:"Tester2Name"`    // username for tester 2
 	Tester2Pass    string `json:"Tester2Pass"`    // password for tester 2
+	S3BucketHost   string `json:"S3BucketHost"`   // S3 Bucket host. It is for storing profile images. e.g., https://s3.ap-south-1.amazonaws.com
+	S3BucketName   string `json:"S3BucketName"`   // S3 Bucket name. e.g., upload-profile-image
+	AWSAccessKeyID string `json:"AWSAccessKeyID"`   // Access key id to use AWS services
+	AWSSecretKey   string `json:"AWSSecretKey"`   // Secret key to use AWS services
 }
 
 // ReadConfig will read the configuration file "config.json" if
