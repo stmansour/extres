@@ -48,7 +48,7 @@ type ExternalResources struct {
 	MojoDbport     int    `json:"MojoDbport"`
 	MojoDbtype     string `json:"MojoDbtype"`
 	MojoWebAddr    string `json:"MojoWebAddr"`
-	Timezone       string `json:"Timezone"`
+	Timezone       string `json:"Timezone"`       // see $GOROOT/lib/time/zoneinfo.zip, or try: tar tvf $GOROOT/lib/time/zoneinfo.zip
 	SessionTimeout int    `json:"SessionTimeout"` // session timeout in minutes
 	RootHandler    string `json:"RootHandler"`    // Handler for web app where url filepath is "/"
 	Tester1Name    string `json:"Tester1Name"`    // username for tester 1
