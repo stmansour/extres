@@ -60,8 +60,8 @@ type ExternalResources struct {
 	RepoURL        string `json:"RepoURL"`        // for Artifactory
 	S3BucketHost   string `json:"S3BucketHost"`   // S3 Bucket host. It is for storing profile images. e.g., https://s3.ap-south-1.amazonaws.com
 	S3BucketName   string `json:"S3BucketName"`   // S3 Bucket name. e.g., upload-profile-image
-	AWSAccessKeyID string `json:"AWSAccessKeyID"` // Access key id to use AWS services
-	AWSSecretKey   string `json:"AWSSecretKey"`   // Secret key to use AWS services
+	S3BucketKeyID  string `json:"S3BucketKeyID"`  // Access key id to use AWS S3 service
+	S3BucketKey    string `json:"S3BucketKey"`    // Secret key to use AWS S3 service
 }
 
 // ReadConfig will read the configuration file "config.json" if
