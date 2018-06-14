@@ -62,6 +62,7 @@ type ExternalResources struct {
 	S3BucketName   string `json:"S3BucketName"`   // S3 Bucket name. e.g., upload-profile-image
 	S3BucketKeyID  string `json:"S3BucketKeyID"`  // Access key id to use AWS S3 service
 	S3BucketKey    string `json:"S3BucketKey"`    // Secret key to use AWS S3 service
+	CryptoKey      string `json:"CryptoKey"`      // key for encryption/decription, must be 32 chars long
 }
 
 // ReadConfig will read the configuration file "config.json" if
