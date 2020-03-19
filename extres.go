@@ -48,6 +48,12 @@ type ExternalResources struct {
 	MojoDbport     int    `json:"MojoDbport"`
 	MojoDbtype     string `json:"MojoDbtype"`
 	MojoWebAddr    string `json:"MojoWebAddr"`
+	WREISDbuser    string `json:"WREISDbuser"`
+	WREISDbname    string `json:"WREISDbname"`
+	WREISDbpass    string `json:"WREISDbpass"`
+	WREISDbhost    string `json:"WREISDbhost"`
+	WREISDbport    int    `json:"WREISDbport"`
+	WREISDbtype    string `json:"WREISDbtype"`
 	Timezone       string `json:"Timezone"`       // see $GOROOT/lib/time/zoneinfo.zip, or try: tar tvf $GOROOT/lib/time/zoneinfo.zip
 	SessionTimeout int    `json:"SessionTimeout"` // session timeout in minutes
 	RootHandler    string `json:"RootHandler"`    // Handler for web app where url filepath is "/"

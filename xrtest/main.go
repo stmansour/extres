@@ -22,4 +22,5 @@ func main() {
 	fmt.Printf("Timezone = %s\n", App.X.Timezone)
 	fmt.Printf("Tester1 = %s\n", App.X.Tester1Name)
 	fmt.Printf("Tester2 = %s\n", App.X.Tester2Name)
+	fmt.Printf("WREISDbname = %s\n", App.X.WREISDbname)
 }
