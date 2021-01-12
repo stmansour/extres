@@ -142,7 +142,19 @@ func GetSQLOpenString(dbname string, a *ExternalResources) string {
 			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
 			os.Exit(1)
 		}
+	case "wreis":
+		switch a.Env {
+		case APPENVDEV: //dev
+			s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.WREISDbuser, dbname)
+		case APPENVPROD: //production
+			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
+				a.WREISDbuser, a.WREISDbpass, a.WREISDbhost, a.WREISDbport, dbname)
+		default:
+			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
+			os.Exit(1)
+		}
 	default:
+		fmt.Printf("extres.GetSQLOpenString: db %s is not recognized, a restrictive login string is returned\n", dbname)
 		s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.Dbuser, dbname)
 	}
 	return s
