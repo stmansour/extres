@@ -64,6 +64,7 @@ type ExternalResources struct {
 	RepoUser       string `json:"RepoUser"`       // for Artifactory
 	RepoPass       string `json:"RepoPass"`       // for Artifactory
 	RepoURL        string `json:"RepoURL"`        // for Artifactory
+	S3Region       string `json:"S3Region"`       //
 	S3BucketHost   string `json:"S3BucketHost"`   // S3 Bucket host. It is for storing profile images. e.g., https://s3.ap-south-1.amazonaws.com
 	S3BucketName   string `json:"S3BucketName"`   // S3 Bucket name. e.g., upload-profile-image
 	S3BucketKeyID  string `json:"S3BucketKeyID"`  // Access key id to use AWS S3 service
