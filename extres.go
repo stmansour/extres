@@ -71,6 +71,7 @@ type ExternalResources struct {
 	S3BucketKey    string `json:"S3BucketKey"`    // Secret key to use AWS S3 service
 	CryptoKey      string `json:"CryptoKey"`      // key for encryption/decription, must be 32 chars long
 	MapKey         string `json:"MapKey"`         // key for using google map
+	RestPWList     string `json:"ResetPWList"`    // list of domains for which reset password is valid
 }
 
 // ReadConfig will read the configuration file "config.json" if
