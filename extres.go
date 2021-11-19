@@ -54,6 +54,12 @@ type ExternalResources struct {
 	WREISDbhost    string   `json:"WREISDbhost"`
 	WREISDbport    int      `json:"WREISDbport"`
 	WREISDbtype    string   `json:"WREISDbtype"`
+	PlatoDbuser    string   `json:"PlatoDbuser"`
+	PlatoDbname    string   `json:"PlatoDbname"`
+	PlatoDbpass    string   `json:"PlatoDbpass"`
+	PlatoDbhost    string   `json:"PlatoDbhost"`
+	PlatoDbport    int      `json:"PlatoDbport"`
+	PlatoDbtype    string   `json:"PlatoDbtype"`
 	Timezone       string   `json:"Timezone"`       // see $GOROOT/lib/time/zoneinfo.zip, or try: tar tvf $GOROOT/lib/time/zoneinfo.zip
 	SessionTimeout int      `json:"SessionTimeout"` // session timeout in minutes
 	RootHandler    string   `json:"RootHandler"`    // Handler for web app where url filepath is "/"
@@ -152,6 +158,17 @@ func GetSQLOpenString(dbname string, a *ExternalResources) string {
 		case APPENVPROD: //production
 			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
 				a.WREISDbuser, a.WREISDbpass, a.WREISDbhost, a.WREISDbport, dbname)
+		default:
+			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
+			os.Exit(1)
+		}
+	case "plato":
+		switch a.Env {
+		case APPENVDEV: //dev
+			s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.PlatoDbuser, dbname)
+		case APPENVPROD: //production
+			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
+				a.PlatoDbuser, a.PlatoDbpass, a.PlatoDbhost, a.PlatoDbport, dbname)
 		default:
 			fmt.Printf("Unhandled configuration environment: %d\n", a.Env)
 			os.Exit(1)
