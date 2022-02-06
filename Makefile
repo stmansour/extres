@@ -4,7 +4,7 @@ DIRS = xrtest
 
 extres:
 	go vet
-	golint
+	if [[ "$(uname)" != "Darwin" ]]; then staticcheck; else golint; fi
 	go build
 	go install
 
@@ -14,7 +14,7 @@ clean:
 
 test:
 	for dir in $(DIRS); do make -C $$dir test;done
-	
+
 all: clean extres stats
 
 try: clean extres
@@ -24,4 +24,3 @@ stats:
 	@echo "----------------------------------------"
 	@find . -name "*.go" | srcstats
 	@echo "----------------------------------------"
-
