@@ -4,7 +4,7 @@ DIRS = xrtest
 
 extres:
 	go vet
-	if [[ "$(uname)" = "Darwin" ]]; then staticcheck; else golint; fi
+	if [[ `uname` = "Darwin" ]]; then staticcheck; else golint; fi
 	go build
 	go install
 
