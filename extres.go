@@ -165,7 +165,9 @@ func GetSQLOpenString(dbname string, a *ExternalResources) string {
 	case "plato":
 		switch a.Env {
 		case APPENVDEV: //dev
-			s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.PlatoDbuser, dbname)
+			// s = fmt.Sprintf("%s:@/%s?charset=utf8&parseTime=True", a.PlatoDbuser, dbname)
+			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
+				a.PlatoDbuser, a.PlatoDbpass, a.PlatoDbhost, a.PlatoDbport, dbname)
 		case APPENVPROD: //production
 			s = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True",
 				a.PlatoDbuser, a.PlatoDbpass, a.PlatoDbhost, a.PlatoDbport, dbname)
