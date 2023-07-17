@@ -1,4 +1,4 @@
-module extres
+module github.com/stmansour/extres
 
 go 1.17
 
