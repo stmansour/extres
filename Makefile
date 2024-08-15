@@ -18,6 +18,7 @@ test:
 all: clean extres stats
 
 try: clean extres
+	@echo "Done"
 
 stats:
 	@echo "GO SOURCE CODE STATISTICS"
